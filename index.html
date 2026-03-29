@@ -1,0 +1,1619 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VAAYU Air Tours - Experience India From the Sky</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Montserrat:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+    body {
+      box-sizing: border-box;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #0f1419 0%, #1a2332 50%, #0f1419 100%);
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    .image-placeholder {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 14, 39, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .nav-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1.5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #e8eaf6;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links a:hover {
+      color: #64ffda;
+    }
+
+    .nav-cta {
+      background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+      color: #0a0e27;
+      padding: 0.75rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(100, 255, 218, 0.3);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      height: 100%;
+      min-height: 900px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding-top: 80px;
+    }
+
+    .hero-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, rgba(100, 255, 218, 0.08) 0%, transparent 70%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      max-width: 1200px;
+      padding: 0 3rem;
+    }
+
+    .hero h1 {
+      font-size: 5rem;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #64ffda 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-subtext {
+      font-size: 1.5rem;
+      color: #b0bec5;
+      margin-bottom: 3rem;
+      font-weight: 300;
+      letter-spacing: 0.02em;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      margin-bottom: 4rem;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+      color: #0a0e27;
+      padding: 1.2rem 3rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-primary::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.3);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .btn-primary:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 30px rgba(100, 255, 218, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #64ffda;
+      padding: 1.2rem 3rem;
+      border: 2px solid #64ffda;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(100, 255, 218, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .info-card {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 16px;
+      padding: 1.5rem 3rem;
+      font-size: 1rem;
+      color: #e8eaf6;
+      font-weight: 500;
+      animation: fadeInUp 1s ease-out 0.6s both;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
+      }
+      50% {
+        box-shadow: 0 0 40px rgba(100, 255, 218, 0.6);
+      }
+    }
+
+    /* Slider Section */
+    .slider-section {
+      padding: 8rem 0;
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0) 0%, rgba(26, 31, 58, 0.5) 50%, rgba(10, 14, 39, 0) 100%);
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.8s forwards;
+    }
+
+    .slider-container {
+      max-width: 1600px;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
+      height: 600px;
+      border-radius: 24px;
+    }
+
+    .slider-track {
+      display: flex;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      height: 600px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+      position: relative;
+    }
+
+    .slide-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7);
+      transition: transform 8s ease-out;
+    }
+
+    .slide.active .slide-image {
+      transform: scale(1.1);
+    }
+
+    .slide-caption {
+      position: absolute;
+      bottom: 4rem;
+      left: 4rem;
+      color: white;
+      z-index: 10;
+    }
+
+    .slide-caption h3 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .slide-caption p {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Destinations Section */
+    .destinations-section {
+      padding: 8rem 3rem;
+      max-width: 1600px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #ffffff 0%, #64ffda 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #b0bec5;
+      margin-bottom: 5rem;
+      font-weight: 300;
+    }
+
+    .destinations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+      gap: 3rem;
+    }
+
+    .destination-card {
+      position: relative;
+      height: 500px;
+      border-radius: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      border: 2px solid rgba(100, 255, 218, 0.1);
+    }
+
+    .destination-card:hover {
+      transform: translateY(-15px) scale(1.02);
+      box-shadow: 0 25px 70px rgba(100, 255, 218, 0.4);
+      border-color: rgba(100, 255, 218, 0.4);
+      animation: glow 2s ease-in-out infinite;
+    }
+
+    .image-note {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(100, 255, 218, 0.15);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(100, 255, 218, 0.3);
+      color: #64ffda;
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      z-index: 10;
+    }
+
+    .destination-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .destination-card:hover .destination-image {
+      transform: scale(1.05);
+    }
+
+    .destination-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(10, 14, 39, 0.95) 0%, transparent 100%);
+      padding: 3rem;
+      transition: background 0.4s ease;
+    }
+
+    .destination-card:hover .destination-overlay {
+      background: linear-gradient(to top, rgba(10, 14, 39, 0.98) 0%, rgba(10, 14, 39, 0.6) 100%);
+    }
+
+    .destination-card h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #64ffda;
+    }
+
+    .destination-card p {
+      font-size: 1.1rem;
+      color: #b0bec5;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    .destination-card .btn-book {
+      background: rgba(100, 255, 218, 0.1);
+      color: #64ffda;
+      border: 2px solid #64ffda;
+      padding: 0.9rem 2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+    }
+
+    .destination-card .btn-book:hover {
+      background: #64ffda;
+      color: #0a0e27;
+      transform: translateY(-2px);
+    }
+
+    /* Aircraft Section */
+    .aircraft-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0) 0%, rgba(26, 31, 58, 0.5) 50%, rgba(10, 14, 39, 0) 100%);
+    }
+
+    .aircraft-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: center;
+    }
+
+    .aircraft-visual {
+      position: relative;
+      opacity: 0;
+      animation: slideInLeft 1s ease-out forwards;
+    }
+
+    .aircraft-render {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 20px 60px rgba(100, 255, 218, 0.3));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .aircraft-features {
+      opacity: 0;
+      animation: slideInRight 1s ease-out 0.3s forwards;
+    }
+
+    .aircraft-features h2 {
+      font-size: 3.5rem;
+      margin-bottom: 2rem;
+      background: linear-gradient(135deg, #ffffff 0%, #64ffda 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .feature-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(100, 255, 218, 0.15);
+      border-radius: 16px;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(100, 255, 218, 0.3);
+      transform: translateX(10px);
+      box-shadow: 0 8px 30px rgba(100, 255, 218, 0.2);
+    }
+
+    .feature-item h4 {
+      font-size: 1.3rem;
+      color: #64ffda;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .feature-item p {
+      color: #b0bec5;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Safety Section */
+    .safety-section {
+      padding: 8rem 3rem;
+      background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%);
+    }
+
+    .safety-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .safety-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .safety-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(100, 255, 218, 0.15);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .safety-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(100, 255, 218, 0.3);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(100, 255, 218, 0.2);
+    }
+
+    .safety-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 2rem;
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(77, 208, 225, 0.1) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.5rem;
+    }
+
+    .safety-card h4 {
+      font-size: 1.4rem;
+      color: #64ffda;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .safety-card p {
+      color: #b0bec5;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* Experience Section */
+    .experience-section {
+      padding: 8rem 3rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 3rem;
+      margin-top: 4rem;
+    }
+
+    .experience-card {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(100, 255, 218, 0.15);
+      border-radius: 20px;
+      padding: 3rem;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .experience-card:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(100, 255, 218, 0.3);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(100, 255, 218, 0.2);
+    }
+
+    .experience-icon {
+      width: 70px;
+      height: 70px;
+      margin: 0 auto 1.5rem;
+      background: linear-gradient(135deg, rgba(100, 255, 218, 0.1) 0%, rgba(77, 208, 225, 0.1) 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+    }
+
+    .experience-card h4 {
+      font-size: 1.3rem;
+      color: #ffffff;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .experience-card p {
+      color: #b0bec5;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(10, 14, 39, 0.95);
+      backdrop-filter: blur(10px);
+      opacity: 0;
+      transition: opacity 0.3s ease-out;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 1;
+    }
+
+    .modal-content {
+      background: rgba(26, 31, 58, 0.95);
+      backdrop-filter: blur(30px);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      transform: scale(0.9);
+      transition: transform 0.3s ease-out;
+    }
+
+    .modal.active .modal-content {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 2rem;
+      color: #b0bec5;
+      cursor: pointer;
+      transition: color 0.3s ease;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    .modal-close:hover {
+      color: #64ffda;
+    }
+
+    .modal h3 {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      color: #64ffda;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #e8eaf6;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 1.1rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(100, 255, 218, 0.3);
+      border-radius: 12px;
+      color: #ffffff;
+      font-size: 1rem;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      font-weight: 500;
+    }
+
+    .form-group input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #64ffda;
+      background: rgba(255, 255, 255, 0.18);
+      box-shadow: 0 0 30px rgba(100, 255, 218, 0.4);
+    }
+
+    .form-group select {
+      cursor: pointer;
+    }
+
+    .form-group select option {
+      background: #1a2332;
+      color: #ffffff;
+      padding: 1rem;
+    }
+
+    .form-submit {
+      width: 100%;
+      background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+      color: #0a0e27;
+      padding: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: 1rem;
+    }
+
+    .form-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(100, 255, 218, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(180deg, rgba(10, 14, 39, 0.5) 0%, #0a0e27 100%);
+      border-top: 1px solid rgba(100, 255, 218, 0.1);
+      padding: 5rem 3rem 3rem;
+    }
+
+    .footer-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    .footer-brand h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .footer-brand p {
+      color: #b0bec5;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background: rgba(100, 255, 218, 0.1);
+      border: 1px solid rgba(100, 255, 218, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #64ffda;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      background: #64ffda;
+      color: #0a0e27;
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-size: 1.2rem;
+      color: #64ffda;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+
+    .footer-column ul {
+      list-style: none;
+    }
+
+    .footer-column li {
+      margin-bottom: 1rem;
+    }
+
+    .footer-column a {
+      color: #b0bec5;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-column a:hover {
+      color: #64ffda;
+    }
+
+    .footer-bottom {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(100, 255, 218, 0.1);
+      text-align: center;
+      color: #b0bec5;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .aircraft-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 1rem 1.5rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero-subtext {
+        font-size: 1.1rem;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .destinations-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body><!-- Navigation -->
+  <nav>
+   <div class="nav-container">
+    <div class="logo">
+     VAAYU
+    </div>
+    <div class="nav-links"><a href="#destinations">Destinations</a> <a href="#aircraft">Aircraft</a> <a href="#safety">Safety</a> <a href="#experience">Experience</a> <a href="#" class="nav-cta" id="navBookBtn">Book Now</a>
+    </div>
+   </div>
+  </nav><!-- Hero Section -->
+  <section class="hero">
+   <div class="hero-background"></div>
+   <div class="hero-content">
+    <h1 id="heroHeadline">Experience India From the Sky — VAAYU Air Tours</h1>
+    <p class="hero-subtext" id="heroSubtext">India's first luxury drone-taxi adventure ride.</p>
+    <div class="hero-cta-group"><button class="btn-primary" id="heroBookBtn">Book Flight</button> <button class="btn-secondary" id="exploreBtn">Explore Destinations</button>
+    </div>
+    <div class="info-card" id="infoCard">
+     2-seater panoramic cabin • Quiet electric propulsion • Certified pilots
+    </div>
+   </div>
+  </section><!-- Stats Section -->
+  <section style="padding: 4rem 3rem; background: linear-gradient(135deg, rgba(100, 255, 218, 0.05) 0%, rgba(77, 208, 225, 0.05) 100%); border-top: 1px solid rgba(100, 255, 218, 0.1); border-bottom: 1px solid rgba(100, 255, 218, 0.1);">
+   <div style="max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; text-align: center;">
+    <div class="stat-item" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.2s forwards;">
+     <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">
+      5
+     </div>
+     <div style="color: #b0bec5; font-size: 1.1rem; font-weight: 500;">
+      Premium Destinations
+     </div>
+    </div>
+    <div class="stat-item" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.4s forwards;">
+     <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">
+      100%
+     </div>
+     <div style="color: #b0bec5; font-size: 1.1rem; font-weight: 500;">
+      Safety Record
+     </div>
+    </div>
+    <div class="stat-item" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.6s forwards;">
+     <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">
+      2
+     </div>
+     <div style="color: #b0bec5; font-size: 1.1rem; font-weight: 500;">
+      Seater Luxury Cabin
+     </div>
+    </div>
+    <div class="stat-item" style="opacity: 0; animation: fadeInUp 0.8s ease-out 0.8s forwards;">
+     <div style="font-size: 3.5rem; font-weight: 800; background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 0.5rem;">
+      360°
+     </div>
+     <div style="color: #b0bec5; font-size: 1.1rem; font-weight: 500;">
+      Panoramic Views
+     </div>
+    </div>
+   </div>
+  </section><!-- Slider Section -->
+  <section class="slider-section">
+   <div class="slider-container">
+    <div class="slider-track" id="sliderTrack">
+     <div class="slide active"><img src="images/manali.png" alt="Manali aerial view" class="slide-image" onerror="this.style.display='none';">
+      <div class="slide-caption">
+       <h3>Manali</h3>
+       <p>Snow-capped peaks and alpine valleys</p>
+      </div>
+     </div>
+     <div class="slide"><img src="udaipur.png" alt="Udaipur palaces" class="slide-image" onerror="this.style.display='none';">
+      <div class="slide-caption">
+       <h3>Udaipur</h3>
+       <p>Majestic lakes and historic palaces</p>
+      </div>
+     </div>
+     <div class="slide"><img src="ladakh.png" alt="Ladakh mountains" class="slide-image" onerror="this.style.display='none';">
+      <div class="slide-caption">
+       <h3>Ladakh</h3>
+       <p>Dramatic desert landscapes and ancient ridges</p>
+      </div>
+     </div>
+     <div class="slide"><img src="images/goa.png" alt="Goa beaches" class="slide-image" onerror="this.style.display='none';">
+      <div class="slide-caption">
+       <h3>Goa</h3>
+       <p>Pristine coastlines and golden beaches</p>
+      </div>
+     </div>
+     <div class="slide"><img src="himachal.png" alt="Himachal valleys" class="slide-image" onerror="this.style.display='none';">
+      <div class="slide-caption">
+       <h3>Himachal</h3>
+       <p>Lush green valleys and serene vistas</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Destinations Section -->
+  <section class="destinations-section" id="destinations">
+   <h2 class="section-title" id="destinationsTitle">Luxury Aerial Destinations</h2>
+   <p class="section-subtitle">Discover India's most breathtaking locations from a new perspective</p>
+   <div class="destinations-grid">
+    <div class="destination-card"><img src="manali.png" alt="Manali" class="destination-image" onerror="this.style.display='none';">
+     <div class="destination-overlay">
+      <h3>Manali</h3>
+      <p>Soar above snow-capped Himalayan peaks and witness the breathtaking beauty of alpine valleys from your private aerial cabin.</p><button class="btn-book" data-destination="Manali">Book Flight</button>
+     </div>
+    </div>
+    <div class="destination-card"><img src="images/udaipur.png" alt="Udaipur" class="destination-image" onerror="this.style.display='none';">
+     <div class="destination-overlay">
+      <h3>Udaipur</h3>
+      <p>Experience the City of Lakes from above, gliding over historic palaces and shimmering waters in serene luxury.</p><button class="btn-book" data-destination="Udaipur">Book Flight</button>
+     </div>
+    </div>
+    <div class="destination-card"><img src="images/ladakh.png" alt="Ladakh" class="destination-image" onerror="this.style.display='none';">
+     <div class="destination-overlay">
+      <h3>Ladakh</h3>
+      <p>Traverse the stark beauty of high-altitude deserts and ancient mountain ridges in this unforgettable aerial journey.</p><button class="btn-book" data-destination="Ladakh">Book Flight</button>
+     </div>
+    </div>
+    <div class="destination-card"><img src="goa.png" alt="Goa" class="destination-image" onerror="this.style.display='none';">
+     <div class="destination-overlay">
+      <h3>Goa</h3>
+      <p>Fly along pristine coastlines and golden beaches, experiencing Goa's tropical paradise from a bird's-eye view.</p><button class="btn-book" data-destination="Goa">Book Flight</button>
+     </div>
+    </div>
+    <div class="destination-card"><img src="images/himachal.png" alt="Himachal" class="destination-image" onerror="this.style.display='none';">
+     <div class="destination-overlay">
+      <h3>Himachal</h3>
+      <p>Glide through lush green valleys and serene mountain vistas in the heart of India's most scenic state.</p><button class="btn-book" data-destination="Himachal">Book Flight</button>
+     </div>
+    </div>
+   </div>
+  </section><!-- Aircraft Section -->
+  <section class="aircraft-section" id="aircraft">
+   <div class="aircraft-container">
+    <div class="aircraft-visual"><img src="images/airtaxi.png" alt="VAAYU Air Taxi" class="aircraft-render" onerror="this.style.display='none';">
+    </div>
+    <div class="aircraft-features">
+     <h2>The VAAYU Aircraft</h2>
+     <div class="feature-list">
+      <div class="feature-item">
+       <h4>2-Seater Panoramic Cabin</h4>
+       <p>Experience unobstructed 360° views through our premium glass cockpit designed for maximum visibility and comfort.</p>
+      </div>
+      <div class="feature-item">
+       <h4>Redundant Multi-Rotor Safety</h4>
+       <p>Advanced multi-rotor configuration ensures stable flight even if individual rotors experience issues.</p>
+      </div>
+      <div class="feature-item">
+       <h4>Emergency Battery Backup</h4>
+       <p>Multiple redundant battery systems provide extended safety margins and guaranteed safe landing capability.</p>
+      </div>
+      <div class="feature-item">
+       <h4>Autonomous Flight Assist</h4>
+       <p>State-of-the-art GPS precision and autonomous systems work alongside our certified pilots for maximum safety.</p>
+      </div>
+      <div class="feature-item">
+       <h4>Eco-Friendly Electric Propulsion</h4>
+       <p>Whisper-quiet electric motors provide a serene flight experience while minimizing environmental impact.</p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </section><!-- Safety Section -->
+  <section class="safety-section" id="safety">
+   <div class="safety-container">
+    <h2 class="section-title">Uncompromising Safety Standards</h2>
+    <p class="section-subtitle">Your safety is our highest priority</p>
+    <div class="safety-grid">
+     <div class="safety-card">
+      <div class="safety-icon">
+       <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 5L10 15V25C10 33 17 40 25 45C33 40 40 33 40 25V15L25 5Z" stroke="#64ffda" stroke-width="2" stroke-linejoin="round" /> <path d="M18 25L23 30L32 21" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+       </svg>
+      </div>
+      <h4>Multi-Sensor Collision Avoidance</h4>
+      <p>Advanced sensor array continuously monitors the environment, automatically avoiding obstacles and ensuring safe flight paths.</p>
+     </div>
+     <div class="safety-card">
+      <div class="safety-icon">
+       <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="25" r="18" stroke="#64ffda" stroke-width="2" /> <path d="M25 15V25L31 28" stroke="#64ffda" stroke-width="2" stroke-linecap="round" />
+       </svg>
+      </div>
+      <h4>DGCA-Compliant Operations</h4>
+      <p>Full compliance with Directorate General of Civil Aviation regulations, ensuring the highest aviation safety standards.</p>
+     </div>
+     <div class="safety-card">
+      <div class="safety-icon">
+       <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="25" cy="20" r="8" stroke="#64ffda" stroke-width="2" /> <path d="M25 28C18 28 12 32 12 37V42H38V37C38 32 32 28 25 28Z" stroke="#64ffda" stroke-width="2" />
+       </svg>
+      </div>
+      <h4>Certified Aviation Pilots</h4>
+      <p>Every flight is operated by highly trained, certified pilots with extensive aviation experience and specialized drone operation training.</p>
+     </div>
+     <div class="safety-card">
+      <div class="safety-icon">
+       <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="15" width="30" height="25" rx="2" stroke="#64ffda" stroke-width="2" /> <path d="M15 20H35M15 25H35M15 30H25" stroke="#64ffda" stroke-width="2" stroke-linecap="round" />
+       </svg>
+      </div>
+      <h4>24/7 Telemetry Monitoring</h4>
+      <p>Real-time flight health monitoring and ground control support throughout every journey for immediate response capability.</p>
+     </div>
+     <div class="safety-card">
+      <div class="safety-icon">
+       <svg width="50" height="50" viewbox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 10L15 20H20V35H30V20H35L25 10Z" stroke="#64ffda" stroke-width="2" stroke-linejoin="round" /> <rect x="12" y="38" width="26" height="4" stroke="#64ffda" stroke-width="2" />
+       </svg>
+      </div>
+      <h4>Strict Pre-Flight Inspections</h4>
+      <p>Comprehensive multi-point inspection protocols conducted before every flight to ensure all systems are operating perfectly.</p>
+     </div>
+    </div>
+   </div>
+  </section><!-- Experience Section -->
+  <section class="experience-section" id="experience">
+   <h2 class="section-title">The VAAYU Experience</h2>
+   <p class="section-subtitle">What to expect on your aerial journey</p>
+   <div class="experience-grid">
+    <div class="experience-card">
+     <div class="experience-icon">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="15" stroke="#64ffda" stroke-width="2" /> <path d="M20 10V20L26 23" stroke="#64ffda" stroke-width="2" stroke-linecap="round" />
+      </svg>
+     </div>
+     <h4>10-Minute Scenic Ride</h4>
+     <p>Carefully curated flight paths designed to showcase the most breathtaking views of each destination.</p>
+    </div>
+    <div class="experience-card">
+     <div class="experience-icon">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="20" r="12" stroke="#64ffda" stroke-width="2" /> <circle cx="20" cy="20" r="8" stroke="#64ffda" stroke-width="2" /> <circle cx="20" cy="20" r="4" stroke="#64ffda" stroke-width="2" />
+      </svg>
+     </div>
+     <h4>360° Panoramic Views</h4>
+     <p>Unobstructed views in every direction through our premium glass cockpit design.</p>
+    </div>
+    <div class="experience-card">
+     <div class="experience-icon">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="20" cy="18" r="6" stroke="#64ffda" stroke-width="2" /> <path d="M20 24C14 24 9 27 9 31V34H31V31C31 27 26 24 20 24Z" stroke="#64ffda" stroke-width="2" />
+      </svg>
+     </div>
+     <h4>Professional Ground Crew</h4>
+     <p>Dedicated team ensures seamless check-in, safety briefing, and boarding experience.</p>
+    </div>
+    <div class="experience-card">
+     <div class="experience-icon">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 20C10 14.5 14.5 10 20 10C25.5 10 30 14.5 30 20" stroke="#64ffda" stroke-width="2" stroke-linecap="round" /> <path d="M15 25C15 22.2 17.2 20 20 20C22.8 20 25 22.2 25 25" stroke="#64ffda" stroke-width="2" stroke-linecap="round" />
+      </svg>
+     </div>
+     <h4>Whisper-Quiet Electric Flight</h4>
+     <p>Experience the serenity of near-silent electric propulsion as you soar above stunning landscapes.</p>
+    </div>
+    <div class="experience-card">
+     <div class="experience-icon">
+      <svg width="40" height="40" viewbox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="8" y="10" width="24" height="18" rx="2" stroke="#64ffda" stroke-width="2" /> <circle cx="20" cy="19" r="4" stroke="#64ffda" stroke-width="2" /> <path d="M12 30L15 28L17 30L20 28L23 30L25 28L28 30" stroke="#64ffda" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+     </div>
+     <h4>Optional Photo &amp; Video Package</h4>
+     <p>Professional aerial photography and videography services available to capture your unforgettable experience.</p>
+    </div>
+   </div>
+  </section><!-- Booking Modal -->
+  <div class="modal" id="bookingModal">
+   <div class="modal-content"><button class="modal-close" id="closeModal">×</button>
+    <h3>Book Your Flight</h3>
+    <form id="bookingForm">
+     <div class="form-group"><label for="name">Full Name</label> <input type="text" id="name" required>
+     </div>
+     <div class="form-group"><label for="phone">Phone Number</label> <input type="tel" id="phone" required>
+     </div>
+     <div class="form-group"><label for="destination">Destination</label> <select id="destination" required> <option value="">Select Destination</option> <option value="Manali">Manali</option> <option value="Udaipur">Udaipur</option> <option value="Ladakh">Ladakh</option> <option value="Goa">Goa</option> <option value="Himachal">Himachal</option> </select>
+     </div>
+     <div class="form-group"><label for="date">Preferred Date</label> <input type="date" id="date" required>
+     </div>
+     <div class="form-group"><label for="time">Time Slot</label> <select id="time" required> <option value="">Select Time</option> <option value="09:00">09:00 AM</option> <option value="11:00">11:00 AM</option> <option value="14:00">02:00 PM</option> <option value="16:00">04:00 PM</option> <option value="18:00">06:00 PM</option> </select>
+     </div><button type="submit" class="form-submit">Confirm Flight</button>
+    </form>
+   </div>
+  </div><!-- AI Image Prompts Section -->
+  <section style="padding: 6rem 3rem; background: rgba(100, 255, 218, 0.03); border-top: 1px solid rgba(100, 255, 218, 0.1);">
+   <div style="max-width: 1200px; margin: 0 auto;">
+    <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, #ffffff 0%, #64ffda 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: 'Montserrat', sans-serif; font-weight: 700;">Gemini AI Image Prompts</h2>
+    <p style="text-align: center; color: #b0bec5; font-size: 1.1rem; margin-bottom: 4rem;">Use these prompts in Google Gemini AI to generate stunning images for the website</p>
+    <div style="display: grid; gap: 2rem;"><!-- Drone Aircraft Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🚁 VAAYU Drone Aircraft</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Create a photorealistic image of a futuristic luxury 2-seater passenger drone taxi aircraft. The drone has a sleek white and teal color scheme with glowing cyan accent lights. It features a transparent glass panoramic cockpit showing two comfortable leather seats inside. The drone has 4 large propellers on extended arms, modern aerodynamic design, and LED lighting strips. Set against a clean gradient background with soft studio lighting. Ultra-modern, premium, Tesla-like aesthetic. 8K quality, professional product photography."</p>
+     </div><!-- Manali Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🏔️ Manali Aerial View</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Aerial photograph of Manali, Himachal Pradesh from a drone's perspective. Show snow-capped Himalayan mountain peaks, lush green pine forests, winding rivers in valleys, traditional mountain villages with scattered houses. Golden hour lighting with dramatic clouds. The futuristic white and teal VAAYU passenger drone visible in the foreground corner. Cinematic, ultra-wide angle, professional travel photography, 8K resolution."</p>
+     </div><!-- Udaipur Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🏰 Udaipur Palace &amp; Lakes</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Bird's eye view of Udaipur City Palace and Lake Pichola from above. Show the magnificent white marble palace architecture, shimmering blue lake water, Jag Mandir island palace, surrounding Aravalli hills. Sunset golden hour lighting reflecting on water. The sleek VAAYU drone taxi with passengers visible flying over the scene. Luxury travel photography, vibrant colors, professional aerial cinematography, 8K quality."</p>
+     </div><!-- Ladakh Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🏜️ Ladakh Desert Mountains</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Dramatic aerial view of Ladakh's high-altitude desert landscape. Show barren brown and red mountain ridges, deep valleys, winding roads, a turquoise glacial lake, Buddhist monasteries on hilltops. Clear blue sky, sharp mountain shadows, pristine untouched wilderness. Modern white VAAYU passenger drone visible in flight. Epic landscape photography, National Geographic style, crystal clear details, 8K resolution."</p>
+     </div><!-- Goa Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🏖️ Goa Coastline</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Stunning aerial photograph of Goa's pristine coastline from above. Show golden sandy beaches, turquoise ocean waves, palm trees lining the shore, beach shacks, luxury resorts, boats in the water. Bright sunny day with vibrant tropical colors. The futuristic VAAYU drone taxi flying along the coast with passengers inside enjoying the view. Paradise destination photography, vivid colors, professional travel magazine quality, 8K."</p>
+     </div><!-- Himachal Prompt -->
+     <div style="background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px); border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 16px; padding: 2rem;">
+      <h3 style="color: #64ffda; font-size: 1.5rem; margin-bottom: 1rem; font-weight: 600;">🌄 Himachal Green Valleys</h3>
+      <p style="color: #ffffff; line-height: 1.8; background: rgba(0,0,0,0.3); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #64ffda; font-family: 'Courier New', monospace; font-size: 0.95rem;">"Aerial view of lush green valleys in Himachal Pradesh. Show rolling hills covered in dense pine and deodar forests, terraced agricultural fields, mountain streams, small villages with traditional houses, distant snow peaks. Misty morning atmosphere with soft diffused lighting. The modern VAAYU passenger drone flying through the scenic valley. Serene landscape photography, rich green tones, cinematic composition, 8K quality."</p>
+     </div>
+    </div>
+    <div style="margin-top: 3rem; padding: 2rem; background: rgba(100, 255, 218, 0.08); border-radius: 16px; border: 2px solid rgba(100, 255, 218, 0.3);">
+     <h4 style="color: #64ffda; font-size: 1.3rem; margin-bottom: 1rem; font-weight: 600;">📝 How to Use These Prompts:</h4>
+     <ol style="color: #ffffff; line-height: 2; padding-left: 1.5rem; font-size: 1rem;">
+      <li>Copy any prompt above</li>
+      <li>Go to <strong style="color: #64ffda;">Google Gemini AI</strong> (gemini.google.com)</li>
+      <li>Paste the prompt and generate the image</li>
+      <li>Download the generated image</li>
+      <li>Replace the placeholder SVG images in the website code with your generated images</li>
+     </ol>
+    </div>
+   </div>
+  </section><!-- Footer -->
+  <footer>
+   <div class="footer-container">
+    <div class="footer-brand">
+     <h3>VAAYU</h3>
+     <p id="footerTagline">Elevating Travel. Redefining Luxury.</p>
+     <div class="social-links"><a href="#" class="social-link" aria-label="Facebook">
+       <svg width="20" height="20" viewbox="0 0 20 20" fill="currentColor"><path d="M10 0C4.477 0 0 4.477 0 10c0 4.991 3.657 9.128 8.438 9.879V12.89h-2.54V10h2.54V7.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V10h2.773l-.443 2.89h-2.33v6.989C16.343 19.129 20 14.99 20 10c0-5.523-4.477-10-10-10z" />
+       </svg></a> <a href="#" class="social-link" aria-label="Instagram">
+       <svg width="20" height="20" viewbox="0 0 20 20" fill="currentColor"><path d="M10 0C7.284 0 6.944.012 5.878.06 4.813.109 4.086.277 3.45.525a4.902 4.902 0 00-1.772 1.153A4.902 4.902 0 00.525 3.45C.277 4.086.109 4.813.06 5.878.012 6.944 0 7.284 0 10s.012 3.056.06 4.122c.049 1.065.217 1.792.465 2.428a4.902 4.902 0 001.153 1.772 4.902 4.902 0 001.772 1.153c.636.248 1.363.416 2.428.465C6.944 19.988 7.284 20 10 20s3.056-.012 4.122-.06c1.065-.049 1.792-.217 2.428-.465a4.902 4.902 0 001.772-1.153 4.902 4.902 0 001.153-1.772c.248-.636.416-1.363.465-2.428.048-1.066.06-1.406.06-4.122s-.012-3.056-.06-4.122c-.049-1.065-.217-1.792-.465-2.428a4.902 4.902 0 00-1.153-1.772A4.902 4.902 0 0016.55.525C15.914.277 15.187.109 14.122.06 13.056.012 12.716 0 10 0zm0 1.802c2.67 0 2.986.01 4.04.058.976.045 1.505.207 1.858.344.466.181.8.398 1.15.748.35.35.567.684.748 1.15.137.353.299.882.344 1.857.048 1.055.058 1.37.058 4.041 0 2.67-.01 2.986-.058 4.04-.045.976-.207 1.505-.344 1.858a3.097 3.097 0 01-.748 1.15c-.35.35-.684.567-1.15.748-.353.137-.882.299-1.857.344-1.054.048-1.37.058-4.041.058-2.67 0-2.987-.01-4.04-.058-.976-.045-1.505-.207-1.858-.344a3.097 3.097 0 01-1.15-.748 3.097 3.097 0 01-.748-1.15c-.137-.353-.299-.882-.344-1.857-.048-1.055-.058-1.37-.058-4.041 0-2.67.01-2.986.058-4.04.045-.976.207-1.505.344-1.858.181-.466.398-.8.748-1.15.35-.35.684-.567 1.15-.748.353-.137.882-.299 1.857-.344 1.055-.048 1.37-.058 4.041-.058z" /> <path d="M10 13.333a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm0-8.468a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm6.538-.203a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z" />
+       </svg></a> <a href="#" class="social-link" aria-label="Twitter">
+       <svg width="20" height="20" viewbox="0 0 20 20" fill="currentColor"><path d="M6.29 18.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0020 3.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.073 4.073 0 01.8 7.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 010 16.407a11.616 11.616 0 006.29 1.84" />
+       </svg></a> <a href="#" class="social-link" aria-label="LinkedIn">
+       <svg width="20" height="20" viewbox="0 0 20 20" fill="currentColor"><path d="M18.335 0H1.665C.745 0 0 .745 0 1.665v16.67C0 19.255.745 20 1.665 20h16.67C19.255 20 20 19.255 20 18.335V1.665C20 .745 19.255 0 18.335 0zM5.946 17.03H2.973V7.502h2.973v9.528zM4.46 6.196a1.723 1.723 0 110-3.446 1.723 1.723 0 010 3.446zm12.57 10.834h-2.973v-4.64c0-1.107-.02-2.53-1.54-2.53-1.542 0-1.778 1.204-1.778 2.448v4.722H7.766V7.502h2.85v1.303h.04c.397-.752 1.367-1.542 2.812-1.542 3.006 0 3.562 1.979 3.562 4.55v5.217z" />
+       </svg></a>
+     </div>
+    </div>
+    <div class="footer-column">
+     <h4>Destinations</h4>
+     <ul>
+      <li><a href="#">Manali</a></li>
+      <li><a href="#">Udaipur</a></li>
+      <li><a href="#">Ladakh</a></li>
+      <li><a href="#">Goa</a></li>
+      <li><a href="#">Himachal</a></li>
+     </ul>
+    </div>
+    <div class="footer-column">
+     <h4>Company</h4>
+     <ul>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Safety</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Press</a></li>
+     </ul>
+    </div>
+    <div class="footer-column">
+     <h4>Contact</h4>
+     <ul>
+      <li><a href="#">info@vaayu.com</a></li>
+      <li><a href="#">+91 98765 43210</a></li>
+      <li><a href="#">Help Center</a></li>
+     </ul>
+    </div>
+   </div>
+   <div class="footer-bottom">
+    <p>© 2024 VAAYU Air Tours. All rights reserved. | Privacy Policy | Terms of Service</p>
+   </div>
+  </footer>
+  <script>
+    const defaultConfig = {
+      hero_headline: "Experience India From the Sky — VAAYU Air Tours",
+      hero_subtext: "India's first luxury drone-taxi adventure ride.",
+      hero_info: "2-seater panoramic cabin • Quiet electric propulsion • Certified pilots",
+      destinations_title: "Luxury Aerial Destinations",
+      footer_tagline: "Elevating Travel. Redefining Luxury.",
+      background_color: "#0a0e27",
+      surface_color: "#1a1f3a",
+      text_color: "#e8eaf6",
+      primary_action_color: "#64ffda",
+      secondary_action_color: "#4dd0e1",
+      font_family: "Inter",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const baseFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = `'${baseFont}', sans-serif`;
+      const headingFontStack = `'Montserrat', ${baseFontStack}`;
+      const baseSize = config.font_size || defaultConfig.font_size;
+
+      document.body.style.fontFamily = baseFontStack;
+      document.body.style.fontSize = `${baseSize}px`;
+      document.body.style.background = `linear-gradient(180deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.surface_color || defaultConfig.surface_color} 50%, ${config.background_color || defaultConfig.background_color} 100%)`;
+      document.body.style.color = config.text_color || defaultConfig.text_color;
+
+      const headings = document.querySelectorAll('h1, h2, h3, h4');
+      headings.forEach(h => {
+        h.style.fontFamily = headingFontStack;
+      });
+
+      document.querySelectorAll('h1').forEach(h => h.style.fontSize = `${baseSize * 3.125}px`);
+      document.querySelectorAll('h2').forEach(h => h.style.fontSize = `${baseSize * 2.1875}px`);
+      document.querySelectorAll('h3').forEach(h => h.style.fontSize = `${baseSize * 1.5625}px`);
+      document.querySelectorAll('h4').forEach(h => h.style.fontSize = `${baseSize * 1.3125}px`);
+
+      document.getElementById('heroHeadline').textContent = config.hero_headline || defaultConfig.hero_headline;
+      document.getElementById('heroSubtext').textContent = config.hero_subtext || defaultConfig.hero_subtext;
+      document.getElementById('infoCard').textContent = config.hero_info || defaultConfig.hero_info;
+      document.getElementById('destinationsTitle').textContent = config.destinations_title || defaultConfig.destinations_title;
+      document.getElementById('footerTagline').textContent = config.footer_tagline || defaultConfig.footer_tagline;
+
+      const primaryColor = config.primary_action_color || defaultConfig.primary_action_color;
+      const secondaryColor = config.secondary_action_color || defaultConfig.secondary_action_color;
+
+      document.querySelectorAll('.btn-primary, .form-submit, .nav-cta').forEach(btn => {
+        btn.style.background = `linear-gradient(135deg, ${primaryColor} 0%, ${secondaryColor} 100%)`;
+        btn.style.color = config.background_color || defaultConfig.background_color;
+      });
+
+      document.querySelectorAll('.btn-secondary, .btn-book').forEach(btn => {
+        btn.style.color = primaryColor;
+        btn.style.borderColor = primaryColor;
+      });
+
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.style.color = config.text_color || defaultConfig.text_color;
+      });
+
+      document.querySelectorAll('.section-subtitle, .hero-subtext, p').forEach(p => {
+        p.style.color = '#b0bec5';
+      });
+    }
+
+    function mapToCapabilities(config) {
+      return {
+        recolorables: [
+          {
+            get: () => config.background_color || defaultConfig.background_color,
+            set: (value) => {
+              config.background_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ background_color: value });
+            }
+          },
+          {
+            get: () => config.surface_color || defaultConfig.surface_color,
+            set: (value) => {
+              config.surface_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ surface_color: value });
+            }
+          },
+          {
+            get: () => config.text_color || defaultConfig.text_color,
+            set: (value) => {
+              config.text_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ text_color: value });
+            }
+          },
+          {
+            get: () => config.primary_action_color || defaultConfig.primary_action_color,
+            set: (value) => {
+              config.primary_action_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ primary_action_color: value });
+            }
+          },
+          {
+            get: () => config.secondary_action_color || defaultConfig.secondary_action_color,
+            set: (value) => {
+              config.secondary_action_color = value;
+              if (window.elementSdk) window.elementSdk.setConfig({ secondary_action_color: value });
+            }
+          }
+        ],
+        borderables: [],
+        fontEditable: {
+          get: () => config.font_family || defaultConfig.font_family,
+          set: (value) => {
+            config.font_family = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_family: value });
+          }
+        },
+        fontSizeable: {
+          get: () => config.font_size || defaultConfig.font_size,
+          set: (value) => {
+            config.font_size = value;
+            if (window.elementSdk) window.elementSdk.setConfig({ font_size: value });
+          }
+        }
+      };
+    }
+
+    function mapToEditPanelValues(config) {
+      return new Map([
+        ["hero_headline", config.hero_headline || defaultConfig.hero_headline],
+        ["hero_subtext", config.hero_subtext || defaultConfig.hero_subtext],
+        ["hero_info", config.hero_info || defaultConfig.hero_info],
+        ["destinations_title", config.destinations_title || defaultConfig.destinations_title],
+        ["footer_tagline", config.footer_tagline || defaultConfig.footer_tagline]
+      ]);
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities,
+        mapToEditPanelValues
+      });
+    }
+
+    // Scroll reveal animation
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for scroll animations
+    document.querySelectorAll('.destinations-section, .safety-section, .experience-section').forEach(section => {
+      section.style.opacity = '0';
+      section.style.transform = 'translateY(50px)';
+      section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+      observer.observe(section);
+    });
+
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) {
+          slide.classList.add('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 5000);
+
+    const modal = document.getElementById('bookingModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const bookButtons = document.querySelectorAll('.btn-book, .btn-primary, .nav-cta, #heroBookBtn, #navBookBtn');
+    const exploreBtn = document.getElementById('exploreBtn');
+    const destinationSelect = document.getElementById('destination');
+
+    bookButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const destination = btn.getAttribute('data-destination');
+        if (destination) {
+          destinationSelect.value = destination;
+        }
+        modal.classList.add('active');
+      });
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+
+    exploreBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const destination = document.getElementById('destination').value;
+      const date = document.getElementById('date').value;
+      const time = document.getElementById('time').value;
+
+      const confirmationMessage = document.createElement('div');
+      confirmationMessage.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(26, 31, 58, 0.98);
+        backdrop-filter: blur(30px);
+        border: 2px solid #64ffda;
+        border-radius: 20px;
+        padding: 3rem;
+        z-index: 3000;
+        text-align: center;
+        max-width: 500px;
+        box-shadow: 0 30px 80px rgba(100, 255, 218, 0.4);
+      `;
+
+      confirmationMessage.innerHTML = `
+        <h3 style="color: #64ffda; font-size: 2rem; margin-bottom: 1.5rem;">Booking Confirmed!</h3>
+        <p style="color: #e8eaf6; font-size: 1.1rem; line-height: 1.6; margin-bottom: 1rem;">
+          Thank you, ${name}! Your flight to ${destination} on ${date} at ${time} has been confirmed.
+        </p>
+        <p style="color: #b0bec5; font-size: 0.95rem; margin-bottom: 2rem;">
+          We'll send you a confirmation message at ${phone} shortly.
+        </p>
+        <button id="closeConfirmation" style="
+          background: linear-gradient(135deg, #64ffda 0%, #4dd0e1 100%);
+          color: #0a0e27;
+          padding: 1rem 2.5rem;
+          border: none;
+          border-radius: 10px;
+          font-size: 1rem;
+          font-weight: 700;
+          cursor: pointer;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: 0.05em;
+          text-transform: uppercase;
+        ">Close</button>
+      `;
+
+      document.body.appendChild(confirmationMessage);
+
+      document.getElementById('closeConfirmation').addEventListener('click', () => {
+        confirmationMessage.remove();
+        modal.classList.remove('active');
+        bookingForm.reset();
+      });
+    });
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a19c9275733b2cd',t:'MTc2MzY2MDk4Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
