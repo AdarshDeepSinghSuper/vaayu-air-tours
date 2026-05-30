@@ -1187,3 +1187,382 @@ nav {
   width: calc(100% - 2rem);
   box-shadow: 0 30px 80px rgba(216, 179, 90, 0.28);
 }
+
+
+/* Responsive hardening for luxury tourism layout */
+img,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.hero h1 {
+  font-size: clamp(2.55rem, 7vw, 5rem);
+}
+
+.section-title,
+.aircraft-features h2 {
+  font-size: clamp(2.1rem, 4.8vw, 3.5rem);
+}
+
+.destinations-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+}
+
+.safety-grid,
+.experience-grid,
+.visual-assets-grid {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+}
+
+.modal-content {
+  max-height: min(90vh, 760px);
+  overflow-y: auto;
+}
+
+@media (max-width: 1200px) {
+  .nav-container,
+  .destinations-section,
+  .aircraft-section,
+  .safety-section,
+  .experience-section,
+  footer,
+  .stats-section,
+  .visual-assets-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .nav-links {
+    gap: 1.5rem;
+  }
+
+  .slider-container,
+  .slide {
+    height: 520px;
+  }
+
+  .aircraft-container {
+    gap: 4rem;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    position: sticky;
+  }
+
+  .nav-container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.85rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 0.88rem;
+  }
+
+  .nav-cta {
+    padding: 0.65rem 1rem;
+  }
+
+  .hero {
+    min-height: 680px;
+    padding-top: 2rem;
+  }
+
+  .hero-content {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.2rem;
+  }
+
+  .info-card {
+    padding: 1.15rem 1.5rem;
+  }
+
+  .slider-section,
+  .destinations-section,
+  .aircraft-section,
+  .safety-section,
+  .experience-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .slider-container,
+  .slide {
+    height: 440px;
+    border-radius: 12px;
+  }
+
+  .slide-caption {
+    bottom: 2rem;
+    left: 2rem;
+    right: 2rem;
+  }
+
+  .slide-caption h3 {
+    font-size: 2.2rem;
+  }
+
+  .destination-card {
+    height: 430px;
+  }
+
+  .destination-overlay {
+    padding: 2rem;
+  }
+
+  .destination-card h3 {
+    font-size: 2rem;
+  }
+
+  .aircraft-container {
+    grid-template-columns: 1fr;
+  }
+
+  .aircraft-render {
+    max-height: 420px;
+    object-fit: contain;
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-container,
+  .destinations-section,
+  .aircraft-section,
+  .safety-section,
+  .experience-section,
+  footer,
+  .stats-section,
+  .visual-assets-section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .logo {
+    font-size: 1.45rem;
+  }
+
+  .nav-links {
+    gap: 0.5rem;
+  }
+
+  .nav-links a {
+    border: 1px solid rgba(216, 179, 90, 0.18);
+    border-radius: 999px;
+    padding: 0.45rem 0.65rem;
+  }
+
+  .nav-cta {
+    border-radius: 999px;
+  }
+
+  .hero {
+    align-items: flex-end;
+    min-height: 620px;
+    padding-bottom: 3rem;
+  }
+
+  .hero-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hero h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-subtext {
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    gap: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .info-card {
+    display: block;
+    font-size: 0.92rem;
+    padding: 1rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.35rem;
+  }
+
+  .stat-label {
+    font-size: 0.92rem;
+  }
+
+  .slider-section,
+  .destinations-section,
+  .aircraft-section,
+  .safety-section,
+  .experience-section,
+  .visual-assets-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .slider-container,
+  .slide {
+    height: 340px;
+  }
+
+  .slide-caption {
+    bottom: 1.35rem;
+    left: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .slide-caption h3 {
+    font-size: 1.65rem;
+  }
+
+  .slide-caption p {
+    font-size: 0.95rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 3rem;
+  }
+
+  .destination-card {
+    height: 390px;
+    border-radius: 10px;
+  }
+
+  .destination-overlay {
+    padding: 1.35rem;
+  }
+
+  .destination-card h3 {
+    font-size: 1.65rem;
+  }
+
+  .destination-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .destination-card .btn-book {
+    width: 100%;
+    padding: 0.8rem 1rem;
+  }
+
+  .feature-item,
+  .safety-card,
+  .experience-card {
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+
+  .aircraft-features h2 {
+    margin-bottom: 1.5rem;
+  }
+
+  .modal-content {
+    border-radius: 10px;
+    padding: 2rem 1.25rem 1.5rem;
+    width: calc(100% - 1.5rem);
+  }
+
+  .modal h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.9rem;
+  }
+
+  .visual-card-image {
+    height: 190px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .confirmation-dialog {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-links a {
+    text-align: center;
+  }
+
+  .nav-cta {
+    grid-column: 1 / -1;
+  }
+
+  .hero {
+    min-height: 590px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .slider-container,
+  .slide {
+    height: 300px;
+  }
+
+  .destination-card {
+    height: 420px;
+  }
+
+  .safety-grid,
+  .experience-grid,
+  .visual-assets-grid {
+    gap: 1.25rem;
+  }
+}
